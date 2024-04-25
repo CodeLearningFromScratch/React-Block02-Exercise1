@@ -1,0 +1,62 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Block02-1</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" defer crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" defer crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone@7.10.3/babel.min.js" defer crossorigin></script>
+  <style>
+    #root{
+        max-width: 170rem;
+        width: 100%;
+        height: 12rem;
+        margin: 0 auto;
+        background-color: lightblue;
+        text-align: center;
+        line-height: 12rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" data-presets="react,stage-3">
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.myName = "a React Programmer";
+  }
+
+  render() {
+    return (
+      <div>
+        <Child name={this.myName} />
+      </div>
+    );
+  }
+}
+
+class Child extends React.Component {
+  render() {
+    return (
+      <div>
+        <p>Hello {this.props.name}, I am the child component!</p>
+      </div>
+    );
+  }
+}
+
+
+    const root = ReactDOM.createRoot(document.getElementById("root"))
+    root.render(<App />);
+  </script>
+</body>
+
+</html>
